@@ -6,9 +6,9 @@ const router = express.Router();
 const db = admin.firestore();
 
 // Instagram API configuration
-const FACEBOOK_APP_ID = "2681931078822638";
-const INSTAGRAM_APP_SECRET = "96308c518f0d78da4506d1258e19607c";
-const REDIRECT_URI = "https://startzy-afd83.web.app";
+const FACEBOOK_APP_ID = process.env.FACEBOOK_APP_ID || "2681931078822638";
+const INSTAGRAM_APP_SECRET = process.env.INSTAGRAM_APP_SECRET || "96308c518f0d78da4506d1258e19607c";
+const REDIRECT_URI = process.env.INSTAGRAM_REDIRECT_URI || "https://startzy-afd83.web.app";
 
 // Exchange authorization code for short-lived token
 const exchangeCodeForShortLivedToken = async (code) => {
