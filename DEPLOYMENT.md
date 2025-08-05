@@ -1,0 +1,57 @@
+# Deployment Instructions
+
+## Environment Variables Required
+
+Set these environment variables in your deployment platform (Render, Railway, etc.):
+
+### Method 1: Individual Variables (Recommended)
+
+```env
+NODE_ENV=production
+FIREBASE_PROJECT_ID=startzy-afd83
+FIREBASE_CLIENT_EMAIL=firebase-adminsdk-fbsvc@startzy-afd83.iam.gserviceaccount.com
+FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----
+MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDAcjNHJh50oyuN
+TpVBrIc/m6yHCgLtoXW94DBnGaZpNtUun0C0GHrUPms9ZkauFphjp5LykWmFL6OF
+OZebjON56Z3bYWgPRWamDTrfgpEQXCDhhzHDnArLn3G3MpXoE8iCEt9RY3ddvETC
+3HdQO5L482Nsz6wafTaAZp3YRsWAeMdtrsA+g8h92qYl7iN64/vzRqsIv1lR2H2T
+dxPIwo16qna0+ayUwEMlO5nTsLVFzviXjtJSR5dowA+yxH/epkZVEQlQgoK5SM2X
+y4EqAxQVThtuBnMWJBRlPwWbcSU3QHkyNPgrO3tgh2K81qRx1PLdrE2ungyYXMTo
+wXrLxfsvAgMBAAECggEAFcu5WAkOsPocACSSzf3a0Y7xktfE7iH3wloGUV771HXD
+3kRmIR+WpbwuDCWtwqDHgJ3ljDiA4Xc8R2X28EScLN4TJVoaXYRoNE1SSicxA8/T
+X4ee0L83D8nOqMd/Z+n5rxWxGjgwODsO9JzgnIMqyaxTKes5XESrLA6zOOAHFV4m
+PDGcqxAb527QB5KvWQD6kCBparVAm3tC8Us3tEj7p9yrO5IrQWY/Ao00czPWK2Pk
+Or4gpQpzxSifVcEqczBMa5ltj7o3SRQBZ/uOTwoo7uCf9mxJrtqMkcTlAng2tSWb
+294pkmo4Ct1P2Mur5oslpDHiFF1aKvlYOAGe67e7aQKBgQDggoyl3NpmGw3JF7NL
+dGlkyNpNUHl+vSvv2CkIXd5ebZgCnApMqxdy3zTl/HL6Z/2iXbzTNoqFRrm7hweI
+UCjDPVhidV0nN9MNHabYB+vmQT3PuBoiqktLl41t9eOu1WF3CYc69CbTxpQZ5Qw+
+KiVe9+iVTVx70UCVC9x+P4x3RwKBgQDbcFZ6/5kJjmNGRTvLiJSB2PEzp8xV7Nn/
+GPTJBlSAauy37jA9E2RWW/0dQwdlUvorJMCDnLE66caTItb7grzq7XEu+0xLwEF3
+SlMS5IKdjnqHlUmE26eNjnDYdSN4KdB88XFQsMjvGH+HnEuS9Dx/EjiP3PkeZgnQ
+hWq0qNQg2QKBgDR2DQuM6fPGCpic0yakkyQb0vcSAPHenm+zIRN1a8rA7S5e7AEy
+UY5kHeZH8U4WEqxoHwFz0zaFak0pplbx9DR7FzYamqPZZZXBAgWlBDiPsjPhnynO
+hT2qsj+pn4RxFA9OyKy79H6z/lN2tD+qdYUVhOGubBf6s46gcOuHSfltAoGARj9s
+L+vrHfgLJ8+6GKocgITmklbBPzCXiOaAVmpEWuff5/HEV4kBsfO4z8lJcNJja7RU
+PM3Insd/3lJk6BcuSza/6P5hqk5dpsaQWZf1iGK4LvdHldSLivFyhpjZRfp818Kj
+N+WgLYp2KP+L4ft18mfu238t8OFRewN66WKypeECgYAcOlxDZ2QOzPB0gx9+OX4o
+EUc+9XPNrQRigdTZdp6rZGo62q+jknbhySYvWstBAoVMrtv9YJdxf9cfnpCCP3qX
+3N5AIif1kx7ORHStZ1vsiaTfatnTvh+ZCfuvHDKjjsUt/QyKCumsCHDSdNuqekHO
+M91Y8EK4PJ7kXal0wdD03w==
+-----END PRIVATE KEY-----"
+```
+
+### Method 2: Single Line Format (Alternative)
+
+```env
+FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDAcjNHJh50oyuN\nTpVBrIc/m6yHCgLtoXW94DBnGaZpNtUun0C0GHrUPms9ZkauFphjp5LykWmFL6OF\nOZebjON56Z3bYWgPRWamDTrfgpEQXCDhhzHDnArLn3G3MpXoE8iCEt9RY3ddvETC\n3HdQO5L482Nsz6wafTaAZp3YRsWAeMdtrsA+g8h92qYl7iN64/vzRqsIv1lR2H2T\ndxPIwo16qna0+ayUwEMlO5nTsLVFzviXjtJSR5dowA+yxH/epkZVEQlQgoK5SM2X\ny4EqAxQVThtuBnMWJBRlPwWbcSU3QHkyNPgrO3tgh2K81qRx1PLdrE2ungyYXMTo\nwXrLxfsvAgMBAAECggEAFcu5WAkOsPocACSSzf3a0Y7xktfE7iH3wloGUV771HXD\n3kRmIR+WpbwuDCWtwqDHgJ3ljDiA4Xc8R2X28EScLN4TJVoaXYRoNE1SSicxA8/T\nX4ee0L83D8nOqMd/Z+n5rxWxGjgwODsO9JzgnIMqyaxTKes5XESrLA6zOOAHFV4m\nPDGcqxAb527QB5KvWQD6kCBparVAm3tC8Us3tEj7p9yrO5IrQWY/Ao00czPWK2Pk\nOr4gpQpzxSifVcEqczBMa5ltj7o3SRQBZ/uOTwoo7uCf9mxJrtqMkcTlAng2tSWb\n294pkmo4Ct1P2Mur5oslpDHiFF1aKvlYOAGe67e7aQKBgQDggoyl3NpmGw3JF7NL\ndGlkyNpNUHl+vSvv2CkIXd5ebZgCnApMqxdy3zTl/HL6Z/2iXbzTNoqFRrm7hweI\nUCjDPVhidV0nN9MNHabYB+vmQT3PuBoiqktLl41t9eOu1WF3CYc69CbTxpQZ5Qw+\nKiVe9+iVTVx70UCVC9x+P4x3RwKBgQDbcFZ6/5kJjmNGRTvLiJSB2PEzp8xV7Nn/\nGPTJBlSAauy37jA9E2RWW/0dQwdlUvorJMCDnLE66caTItb7grzq7XEu+0xLwEF3\nSlMS5IKdjnqHlUmE26eNjnDYdSN4KdB88XFQsMjvGH+HnEuS9Dx/EjiP3PkeZgnQ\nhWq0qNQg2QKBgDR2DQuM6fPGCpic0yakkyQb0vcSAPHenm+zIRN1a8rA7S5e7AEy\nUY5kHeZH8U4WEqxoHwFz0zaFak0pplbx9DR7FzYamqPZZZXBAgWlBDiPsjPhnynO\nhT2qsj+pn4RxFA9OyKy79H6z/lN2tD+qdYUVhOGubBf6s46gcOuHSfltAoGARj9s\nL+vrHfgLJ8+6GKocgITmklbBPzCXiOaAVmpEWuff5/HEV4kBsfO4z8lJcNJja7RU\nPM3Insd/3lJk6BcuSza/6P5hqk5dpsaQWZf1iGK4LvdHldSLivFyhpjZRfp818Kj\nN+WgLYp2KP+L4ft18mfu238t8OFRewN66WKypeECgYAcOlxDZ2QOzPB0gx9+OX4o\nEUc+9XPNrQRigdTZdp6rZGo62q+jknbhySYvWstBAoVMrtv9YJdxf9cfnpCCP3qX\n3N5AIif1kx7ORHStZ1vsiaTfatnTvh+ZCfuvHDKjjsUt/QyKCumsCHDSdNuqekHO\nM91Y8EK4PJ7kXal0wdD03w==\n-----END PRIVATE KEY-----"
+```
+
+## Important Notes
+
+1. **FIREBASE_PRIVATE_KEY**: Copy the entire private key including the BEGIN and END lines
+2. **Line breaks**: Make sure the private key maintains its line breaks
+3. **NODE_ENV**: Set to "production" for deployment platforms
+
+## Local Development
+
+For local development, create a `serviceAccountKey.json` file with your Firebase service account credentials.
